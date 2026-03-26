@@ -1,7 +1,36 @@
 [project]
-name = "ollama-test"
+name = "robot-voice-control"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-requires-python = ">=3.10"
-dependencies = []
+description = "CUDA 12.8 기반 로봇 음성 제어 프로젝트"
+# ★ Python 3.10으로 고정
+requires-python = ">=3.10,<3.11"
+dependencies = [
+    "ollama",
+    "SpeechRecognition",
+    "faster-whisper",
+    "PyAudio",
+    "pygame",
+    "unidic-lite",
+    "markupsafe<3.0.0",
+    "onnxruntime<1.20",
+    "mecab-python3==1.0.9",
+    # ★ 버전 뒤의 +cu128을 제거하고 이름만 적습니다. (sources에서 처리함)
+    "torch",
+    "torchvision",
+    "torchaudio",
+    "melotts",
+    "python-mecab-ko>=1.3.7",
+]
+
+[tool.uv.sources]
+# ★ GitHub에서 가져올 패키지 지정
+melotts = { git = "https://github.com/myshell-ai/MeloTTS.git" }
+# ★ PyTorch 관련 패키지를 전용 인덱스(cu128)에 강제로 연결
+torch = { index = "pytorch-cu128" }
+torchvision = { index = "pytorch-cu128" }
+torchaudio = { index = "pytorch-cu128" }
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true  # 명시적으로 sources에서 지정한 것만 여기서 가져옴
