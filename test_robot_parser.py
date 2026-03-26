@@ -60,13 +60,13 @@ if __name__ == "__main__":
     parser = RobotCommandParser()
     
     # 예시 명령 1
-    test_cmd_1 = "거실로 가서 오른팔로 물병 좀 집어줘."
+    test_cmd_1 = "거실로 이동해."
     result_1 = parser.parse_command(test_cmd_1)
     parser.confirm_and_execute(result_1)
     
     print("-" * 30)
     
     # 예시 명령 2
-    test_cmd_2 = "침실로 이동해."
+    test_cmd_2 = "거실로 가서 오른팔로 물병 좀 집어줘."
     result_2 = parser.parse_command(test_cmd_2)
     parser.confirm_and_execute(result_2)
