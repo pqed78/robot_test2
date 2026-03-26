@@ -4,7 +4,7 @@
 
 ## 🌟 주요 기능
 - **STT (Speech-to-Text)**: **Faster-Whisper Large-v3** 엔진을 사용한 고정밀 실시간 한국어 음성 인식 (Beam size 5, float16 연산 적용).
-- **Intelligence (LLM)**: Ollama(**Qwen 2.5 7B**) 기반 `robot_commander` 모델을 통한 자연어 명령 파싱 및 의도 추출 (영문 시스템 프롬프트 기반 고성능 추론).
+- **Intelligence (LLM)**: Ollama(**Qwen 2.5 7B**) 기반 `robot_commander` 모델을 통한 자연어 명령 파싱 및 의도 추출 (영문 시스템 프롬프트 기반 고성능 추론, **순수 JSON 출력 최적화**).
 - **TTS (Text-to-Speech)**: **MeloTTS**를 이용한 고품질 로컬 한국어 음성 안내 및 `aplay` 기반 재생.
 - **Verification Loop**: 명령 실행 전 사용자에게 확인을 받는 안전 로직(IDLE -> CONFIRMING 상태 머신) 포함.
 - **Simulation**: NVIDIA Isaac Sim 5.1 및 ROS2 Humble 연동 지원.
