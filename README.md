@@ -41,6 +41,7 @@ ollama create robot_commander -f robot_modelfile
 ### 1. 지능형 음성 제어 루프 실행
 사용자의 음성을 듣고, 분석하여 확인 메시지를 내보내는 메인 루프를 실행합니다.
 ```bash
+python -m unidic download # 한국어 사전 다운로드 (처음 실행전에만 필요)
 uv run python robot_continuous_loop.py
 ```
 
